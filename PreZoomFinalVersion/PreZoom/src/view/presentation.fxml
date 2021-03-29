@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="presentationWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.myController">
+   <bottom>
+      <Slider fx:id="slider" onDragDetected="#doZoom" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+             <MenuItem fx:id="fileOpenButton" mnemonicParsing="false" onAction="#fileOpenButtonClicked" text="Open" />
+              <MenuItem fx:id="fileSaveButton" mnemonicParsing="false" onAction="#fileSaveButtonClicked" text="Save" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="presentationButton" mnemonicParsing="false" onAction="#startPresentationClicked" text="Presentation" />
+               <!--     <MenuItem mnemonicParsing="false" text="Add Shape" />
+                  <MenuItem mnemonicParsing="false" text="Add Text" /> -->
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Animation">
+               <items>
+                  <MenuItem fx:id="zoomInButton" mnemonicParsing="false" onAction="#zoomInClicked" text="Zoom In" />
+                  <MenuItem fx:id="zoomOutButton" mnemonicParsing="false" onAction="#zoomOutClicked" text="Zoom Out" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Select Option" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="rectangleButton" mnemonicParsing="false" onAction="#createRectangleClicked" text="Rectangle" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="ovalButton" mnemonicParsing="false" onAction="#createOvalClicked" text="Oval" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="lineButton" mnemonicParsing="false" onAction="#createLineClicked" text="Line" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="textButton" mnemonicParsing="false" onAction="#createTextClicked" text="Text" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="addState" mnemonicParsing="false" onAction="#addNewState" text="Add State" />
+            <Separator prefWidth="200.0" />
+            <ColorPicker fx:id="colorPicker" onAction="#onColorPickerClicked" />
+            <Separator prefWidth="200.0" />
+            <Separator prefWidth="200.0" />
+            <Label text="X - Cord" />
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="xCordTf" />
+            <Separator prefWidth="200.0" />
+            <Label text="Y - Cord" />
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="yCordTf" />
+            <Separator prefWidth="200.0" />
+            <Label text="Height" />
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="heightTf" />
+            <Separator prefWidth="200.0" />
+            <Label text="Width" />
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="widthTf" />
+            <Separator prefWidth="200.0" />
+            <Label text="Radius" />
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="radiusTf" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="changeShapeButton" mnemonicParsing="false" onAction="#resizeShapeClicked" text="Resize Shape" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+    
+      <AnchorPane fx:id="canvas" prefHeight="5000.0" prefWidth="5000.0" style="-fx-background-color: #ffffff; -fx-border-color: green; -fx-border-width: 2px 2px 2px 2px;" BorderPane.alignment="CENTER" />
+       
+   </center>
+   <left>
+      <VBox fx:id="vBoxTimeline" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Timeline" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="state1Button" mnemonicParsing="false" onAction="#state1Clicked" text="State 1" />
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
